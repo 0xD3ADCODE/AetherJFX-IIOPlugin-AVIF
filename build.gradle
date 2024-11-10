@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'javafx.iio.plugin'
-version = '1.0'
+version = 'v1.0'
 
 repositories {
     mavenCentral()
