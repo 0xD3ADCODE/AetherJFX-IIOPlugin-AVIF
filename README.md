@@ -1,4 +1,7 @@
-# AetherJFX AVIF IIOPlugin
+[![AetherJFX](https://img.shields.io/badge/Only%20for:-AetherJFX-blue)](https://github.com/0xD3ADCODE/AetherJFX)
+![Java](https://img.shields.io/badge/Java-17-b07219)
+
+# AetherJFX AVIF Plugin
 
 > [!WARNING]  
 > This plugin is designed to be used ONLY with [JavaFX](https://github.com/openjdk/jfx) fork [AetherJFX](https://github.com/0xD3ADCODE/AetherJFX). Attempting to use it with standard JavaFX will lead to an exception!
