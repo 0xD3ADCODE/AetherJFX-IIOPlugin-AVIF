@@ -12,6 +12,39 @@ Based on [vavi-image-avif](https://github.com/umjammer/vavi-image-avif) and inte
 > [!WARNING]  
 > Prebuild `Windows x86-64` library is included into jar. Refer to [libavif](https://github.com/AOMediaCodec/libavif) repository for installation guide for other systems
 
+Define custom Gradle ivy repository in `repositories` block:
+```groovy
+repositories {
+    //...your repositories
+    def github = ivy {
+        url 'https://github.com/'
+        patternLayout {
+            artifact '/[organisation]/[module]/releases/download/[revision]/[artifact].[ext]'
+        }
+        metadataSources { artifact() }
+    }
+    exclusiveContent {
+        forRepositories(github)
+        filter { includeGroup("0xD3ADCODE") }
+    }
+}
+```
+
+Add dependency into `dependencies` block:
+```groovy
+dependencies {
+    //...your dependencies
+    implementation("0xD3ADCODE:AetherJFX-IIOPlugin-AVIF:{version}") {
+        artifact {
+            name = 'AetherJFX-IIOPlugin-AVIF-{version}'
+            type = 'jar'
+        }
+    }
+}
+```
+
+Replace `{version}` with latest [Release](https://github.com/0xD3ADCODE/AetherJFX-IIOPlugin-AVIF/releases) tag (eg, `v1.0`)
+
 ## Usage
 Register plugin as soon as possible (before JavaFX Toolkit start) with just one line of code:
 ```java
