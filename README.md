@@ -1,7 +1,7 @@
 [![AetherJFX](https://img.shields.io/badge/Only%20for:-AetherJFX-blue)](https://github.com/0xD3ADCODE/AetherJFX)
 ![Java](https://img.shields.io/badge/Java-17-b07219)
 
-# AetherJFX AVIF Plugin
+# AetherJFX AVIF Image Decoder Plugin
 
 > [!WARNING]  
 > This plugin is designed to be used ONLY with [JavaFX](https://github.com/openjdk/jfx) fork [AetherJFX](https://github.com/0xD3ADCODE/AetherJFX). Attempting to use it with standard JavaFX will lead to an exception!
@@ -37,16 +37,16 @@ Add dependency into `dependencies` block:
 ```groovy
 dependencies {
     //...your dependencies
-    implementation("0xD3ADCODE:AetherJFX-IIOPlugin-AVIF:{version}") {
+    implementation("0xD3ADCODE:AetherJFX-ImageDecoder-AVIF:{version}") {
         artifact {
-            name = 'AetherJFX-IIOPlugin-AVIF-{version}'
+            name = 'AetherJFX-ImageDecoder-AVIF-{version}'
             type = 'jar'
         }
     }
 }
 ```
 
-Replace `{version}` with latest [Release](https://github.com/0xD3ADCODE/AetherJFX-IIOPlugin-AVIF/releases) tag (eg, `v1.0`)
+Replace `{version}` with latest [Release](https://github.com/0xD3ADCODE/AetherJFX-ImageDecoder-AVIF/releases) tag (eg, `v1.0`)
 
 ## Usage
 Register plugin as soon as possible (before JavaFX Toolkit start) with just one line of code:

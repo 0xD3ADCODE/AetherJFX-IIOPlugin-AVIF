@@ -1,4 +1,4 @@
-module AetherJFX.IIOPlugin.AVIF {
+module AetherJFX.ImageDecoder.AVIF {
     requires java.desktop;
     requires javafx.graphics;
     requires com.sun.jna;
