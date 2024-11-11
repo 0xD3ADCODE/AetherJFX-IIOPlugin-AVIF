@@ -56,6 +56,13 @@ AVIFLoader.register();
 
 After that all AVIF images will be decoded using newly installed decoder directly into JavaFX's `Image` without `AWT`
 
+## Development
+
+To properly build `jar` by yourself, clone repository and create `gradle.properties` file with:
+```text
+AETHER_JFX_SDK_PATH = <path to unpacked AetherJFX SDK folder>
+```
+
 ## Credits
 [AOMediaCodec](https://github.com/AOMediaCodec) for [AVIF](https://github.com/AOMediaCodec/libavif) decoder  
 [umjammer](https://github.com/umjammer/) for [vavi-image-avif](https://github.com/umjammer/vavi-image-avif) AVIF decoder/encoder implementation for Java
