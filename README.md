@@ -43,6 +43,9 @@ dependencies {
             type = 'jar'
         }
     }
+
+    // JNA is required for native library
+    implementation 'net.java.dev.jna:jna:5.14.0'
 }
 ```
 
