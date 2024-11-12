@@ -1,9 +1,6 @@
 package javafx.iio.plugin.avif;
 
-import javafx.iio.IIO;
-import javafx.iio.IIOImageFrame;
-import javafx.iio.IIOLoader;
-import javafx.iio.IIOSignature;
+import javafx.iio.*;
 
 import javax.imageio.IIOException;
 import java.io.ByteArrayOutputStream;
@@ -39,7 +36,15 @@ public class AVIFLoader extends IIOLoader {
             ByteBuffer byteBuffer = ByteBuffer.allocateDirect(length);
             byteBuffer.put(baos.toByteArray(), 0, length);
 
-            return Avif.getInstance().decode(byteBuffer, length);
+            IIOImageFrame imageFrame = Avif.getInstance().decode(byteBuffer, length);
+
+            int[] outWH = IIOImageTools.computeDimensions(imageFrame.getWidth(), imageFrame.getHeight(), rWidth, rHeight, preserveAspectRatio);
+            rWidth = outWH[0];
+            rHeight = outWH[1];
+
+            return imageFrame.getWidth() != rWidth || imageFrame.getHeight() != rHeight
+                    ? IIOImageTools.scaleImageFrame(imageFrame, rWidth, rHeight, smooth)
+                    : imageFrame;
         } catch (Exception e) {
             throw new IIOException(e.getMessage(), e);
         }
